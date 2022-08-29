@@ -11,17 +11,23 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Location</th>
-            <th>Definitely an Image of the Place</th>
+            <th>Edit Event</th>
+<!--            <th>Definitely an Image of the Place</th>-->
         </tr>
     </thead>
         <tr th:each="event : ${events}">
-            <td th:text = ${event.getKey()}/></td>
-            <td th:text = ${event.getValue()}/></td>
-            <td th:replace="fragments :: location"></td>
-            <td><img th:src="@{/images/locationImage.jpg}"/></td>
+            <td th:text = "${event.id}"></td>
+            <td th:text = "${event.name}"></td>
+            <td th:text = "${event.description}"></td>
+            <td th:text="${event.location}"></td>
+            <td>
+                <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+            </td>
+<!--            <td><img th:src="@{/images/locationImage.jpg}"/></td>-->
         </tr>
 </table>
 

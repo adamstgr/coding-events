@@ -1,4 +1,4 @@
-package org.lauchcode.codingevents;
+package org.lauchcode.codingevents.controllers;
 
 
 import org.springframework.stereotype.Controller;
